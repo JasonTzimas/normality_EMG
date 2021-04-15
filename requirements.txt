@@ -30,8 +30,8 @@ scikit_learn == 0.23.1
 # normality_EMG/main.py: 3,4,7,10,15,16,17
 scipy == 1.5.0
 
-# normality_EMG/.ipynb_checkpoints/emg_first-checkpoint.ipynb: 11,14,15,16
-# normality_EMG/emg_first.ipynb: 11,14,15,16
+# normality_EMG/.ipynb_checkpoints/emg_first-checkpoint.ipynb: 21
+# normality_EMG/emg_first.ipynb: 21
 # normality_EMG/functions/normality_function.py: 9
 # normality_EMG/main.py: 9,12,13,14
 statsmodels == 0.11.1

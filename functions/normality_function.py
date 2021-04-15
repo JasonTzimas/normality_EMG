@@ -11,6 +11,8 @@ from scipy.stats import normaltest
 
 def normality_fun(emg1, emg2, quantiles):
 
+    plt.rcParams["figure.figsize"] = (18,8)
+
     # plot raw data
     T = 0.001
     N = emg1.shape[0]
@@ -24,10 +26,11 @@ def normality_fun(emg1, emg2, quantiles):
     axs[1].set_ylabel("raw EMG (mV)", fontsize=20)
     fig.suptitle("Raw and Normalized EMG from biceps and triceps", y=1.08, fontsize=22)
     fig.tight_layout()
-    plt.close()
-
+    plt.show()
 
     # Plot histogramm and best fit Gaussian
+    plt.rcParams["figure.figsize"] = (18,5)
+
     fig, axs = plt.subplots(1,2)
     n = quantiles
     _, bins, _ = axs[0].hist(emg1, n, density=1)
@@ -43,7 +46,7 @@ def normality_fun(emg1, emg2, quantiles):
     axs[1].plot(bins, y, linewidth=4)
     fig.suptitle("EMG biceps and triceps histogram vs best fit Gaussian", y=1.08, fontsize=22)
     fig.tight_layout()
-    plt.close()
+    plt.show()
 
     # Plot qq-plot
     fig, axs = plt.subplots(1,2)
@@ -51,7 +54,7 @@ def normality_fun(emg1, emg2, quantiles):
     qqplot(emg2, line='s', ax=axs[1])
     fig.suptitle("QQ-Plots for normality checking", y=1.08, fontsize=22)
     fig.tight_layout()
-    plt.close()
+    plt.show()
 
     # D' agostino normality test
     stat, p = normaltest(emg1)
