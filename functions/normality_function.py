@@ -22,7 +22,7 @@ def normality_fun(emg1, emg2, quantiles):
     axs[1].plot(t, emg2)
     axs[1].set_xlabel("Time (s)", fontsize=20)
     axs[1].set_ylabel("raw EMG (mV)", fontsize=20)
-    fig.suptitle("Raw and Normalized EMG from biceps and triceps", fontsize=22)
+    fig.suptitle("Raw and Normalized EMG from biceps and triceps", y=1.08, fontsize=22)
     fig.tight_layout()
     plt.close()
 
@@ -41,15 +41,15 @@ def normality_fun(emg1, emg2, quantiles):
     mu, std = scipy.stats.norm.fit(emg2)
     y = scipy.stats.norm.pdf(bins, mu, std)
     axs[1].plot(bins, y, linewidth=4)
-    fig.suptitle("EMG biceps and triceps histogram vs best fit Gaussian", fontsize=22)
+    fig.suptitle("EMG biceps and triceps histogram vs best fit Gaussian", y=1.08, fontsize=22)
     fig.tight_layout()
-    fig.close()
+    plt.close()
 
     # Plot qq-plot
     fig, axs = plt.subplots(1,2)
     qqplot(emg1, line='s', ax=axs[0])
     qqplot(emg2, line='s', ax=axs[1])
-    fig.suptitle("QQ-Plots for normality checking", fontsize=22)
+    fig.suptitle("QQ-Plots for normality checking", y=1.08, fontsize=22)
     fig.tight_layout()
     plt.close()
 
