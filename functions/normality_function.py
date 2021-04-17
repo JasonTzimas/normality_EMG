@@ -8,10 +8,10 @@ from scipy import stats
 from sklearn import preprocessing
 from statsmodels.graphics.gofplots import qqplot
 from scipy.stats import normaltest
-
+plt.ion()
 def normality_fun(emg1, emg2, quantiles):
 
-    plt.rcParams["figure.figsize"] = (18,8)
+    plt.rcParams["figure.figsize"] = (12,4)
 
     # plot raw data
     T = 0.001
@@ -29,7 +29,7 @@ def normality_fun(emg1, emg2, quantiles):
     plt.show()
 
     # Plot histogramm and best fit Gaussian
-    plt.rcParams["figure.figsize"] = (18,5)
+    plt.rcParams["figure.figsize"] = (12,5)
 
     fig, axs = plt.subplots(1,2)
     n = quantiles
@@ -57,6 +57,8 @@ def normality_fun(emg1, emg2, quantiles):
     plt.show()
 
     # D' agostino normality test
+    plt.rcParams["figure.figsize"] = (12,5)
+
     stat, p = normaltest(emg1)
     print('Statistics=%.3f, p=%.3f' % (stat, p))
     # interpret
