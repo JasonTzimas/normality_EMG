@@ -23,3 +23,6 @@ scipy == 1.5.2
 # C:\Users\iasonas\Jupyter\normality_EMG\functions\normality_function.py: 9
 # C:\Users\iasonas\Jupyter\normality_EMG\main.py: 9,12,13,14
 statsmodels == 0.12.0
+ipympl
+ipywidgets
+jupyter_contrib_nbextensions
